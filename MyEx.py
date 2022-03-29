@@ -1,5 +1,4 @@
 a = 0
-bool = True
 class my_car:
     
     def __init__ (self):
@@ -55,6 +54,7 @@ class my_car:
             print("WASTED")
             a = 0
             
+            
     def turn_right (self):
         global a
         if a < 100:
@@ -63,6 +63,7 @@ class my_car:
             print("Speed is too fast. Slipped.")
             print("WASTED")
             a = 0
+            
     
     def reverse (self):
         global a
@@ -77,7 +78,7 @@ if __name__ == '__main__':
     print("Pick the car")
     b = input()
     if b == "Benz amg GT":
-        while bool:
+        while True:
             print("Accelerate : ac Brake : br Shift : sh Turn left : tl Turn right : tr Go backward : R Stop : st")
             c = input()
             if c == "ac":
@@ -88,14 +89,18 @@ if __name__ == '__main__':
                 drive.shift()
             elif c == "tl":
                 drive.turn_left()
+                if a == 0:
+                    break
             elif c == "tr":
                 drive.turn_right()
+                if a == 0:
+                    break
             elif c == "R":
                 drive.reverse()
             elif c == "st":
                 break
     if b == "Porsche 911":
-        while bool:
+        while True:
             print("Accelerate : ac Brake : br Shift : sh Turn left : tl Turn right : tr Go backward : R Stop : st")
             c = input()
             if c == "ac":
@@ -106,14 +111,18 @@ if __name__ == '__main__':
                 drive.shift()
             elif c == "tl":
                 drive.turn_left()
+                if a == 0:
+                    break
             elif c == "tr":
                 drive.turn_right()
+                if a == 0:
+                    break
             elif c == "R":
                 drive.reverse()
             elif c == "st":
                 break
     if b == "Corvette":
-        while bool:
+        while True:
             print("Accelerate : ac Brake : br Shift : sh Turn left : tl Turn right : tr Go backward : R Stop : st")
             c = input()
             if c == "ac":
@@ -124,8 +133,12 @@ if __name__ == '__main__':
                 drive.shift()
             elif c == "tl":
                 drive.turn_left()
+                if a == 0:
+                    break
             elif c == "tr":
                 drive.turn_right()
+                if a == 0:
+                    break
             elif c == "R":
                 drive.reverse()
             elif c == "st":
