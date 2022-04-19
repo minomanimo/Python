@@ -4,14 +4,26 @@ photoList = ["GIF/jeju1.gif", "GIF/jeju2.gif","GIF/jeju3.gif","GIF/jeju4.gif","G
 
 window=Tk()
 window.geometry("700x480")
+
+global a
 a = 0
 def nextPhoto():
+    global a
     a = a + 1
-    photo.configure(file=photoList[a])
+    if a <= 13:
+        photo.configure(file=photoList[a])
+    else:
+        a = 0
+        photo.configure(file=photoList[a])
 
 def previousPhoto():
+    global a
     a = a - 1
-    photo.configure(file=photoList[a])
+    if a >= 0:
+        photo.configure(file=photoList[a])
+    else:
+        a = 13
+        photo.configure(file=photoList[a])
     
 buttonPrevious=Button(window, text="<< 이전",  command=previousPhoto)
 buttonNext=Button(window, text="다음 >>", command=nextPhoto)
